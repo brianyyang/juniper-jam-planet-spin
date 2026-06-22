@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bvlijvfgfwshf"]
+
+[ext_resource type="Texture2D" uid="uid://cjm6bk1rykepx" path="res://assets/Terra_globe_icon.png" id="1_invnv"]
+[ext_resource type="Script" uid="uid://dq7wed7ee6qeq" path="res://scenes/planet/planet.gd" id="1_q7o7h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7o7h"]
+radius = 62.1289
+
+[node name="Planet" type="AnimatableBody2D" unique_id=1293236800]
+script = ExtResource("1_q7o7h")
+rotation_speed = 5.0
+acceleration = 10.0
+damping = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999152958]
+scale = Vector2(0.16352403, 0.16352405)
+texture = ExtResource("1_invnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446011841]
+shape = SubResource("CircleShape2D_q7o7h")

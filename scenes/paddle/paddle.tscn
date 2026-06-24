@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c8uxg8xw4y13r"]
+
+[ext_resource type="Script" uid="uid://cbikvkwfrwtw8" path="res://scenes/paddle/paddle.gd" id="1_q5rgx"]
+[ext_resource type="Texture2D" uid="uid://cjm6bk1rykepx" path="res://assets/Terra_globe_icon.png" id="2_2sa55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5rgx"]
+size = Vector2(16, 64)
+
+[node name="Paddle" type="StaticBody2D" unique_id=207666051]
+collision_mask = 2
+script = ExtResource("1_q5rgx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792027524]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_q5rgx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873107721]
+position = Vector2(0, -32)
+scale = Vector2(0.021939678, 0.08389041)
+texture = ExtResource("2_2sa55")

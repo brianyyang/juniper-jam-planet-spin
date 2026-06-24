@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://h4oh726onwtc"]
+
+[ext_resource type="Script" uid="uid://b7xsf33c8ns1t" path="res://scenes/asteroid/asteroid.gd" id="1_j1t37"]
+[ext_resource type="Texture2D" uid="uid://cjm6bk1rykepx" path="res://assets/Terra_globe_icon.png" id="1_phgi8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sa55"]
+friction = 0.0
+bounce = 0.65
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1t37"]
+radius = 16.03122
+
+[node name="Asteroid" type="RigidBody2D" unique_id=215088674]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_2sa55")
+gravity_scale = 0.0
+script = ExtResource("1_j1t37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309580316]
+shape = SubResource("CircleShape2D_j1t37")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1137710632]
+modulate = Color(1, 0.4441325, 0.90252554, 1)
+scale = Vector2(0.043237973, 0.043237973)
+texture = ExtResource("1_phgi8")

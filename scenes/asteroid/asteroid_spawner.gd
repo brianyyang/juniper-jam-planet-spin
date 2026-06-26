@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func spawn() -> void:
 	var spawn_point := get_random_screen_edge_position()
-	var aim_offset := Vector2(576.0, 320.0)
+	var aim_offset := Vector2(screen_width / 2, screen_height / 2)
 
 	var asteroid := asteroid_scene.instantiate()
 	container.add_child(asteroid)

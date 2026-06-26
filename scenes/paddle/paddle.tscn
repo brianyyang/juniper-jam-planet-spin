@@ -1,20 +1,26 @@
 [gd_scene format=3 uid="uid://c8uxg8xw4y13r"]
 
 [ext_resource type="Script" uid="uid://cbikvkwfrwtw8" path="res://scenes/paddle/paddle.gd" id="1_q5rgx"]
-[ext_resource type="Texture2D" uid="uid://cjm6bk1rykepx" path="res://assets/Terra_globe_icon.png" id="2_2sa55"]
+[ext_resource type="Texture2D" uid="uid://c72sgwiefcvjk" path="res://assets/spritesheet.png" id="2_2sa55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5rgx"]
-size = Vector2(16, 64)
+size = Vector2(8, 48)
 
-[node name="Paddle" type="StaticBody2D" unique_id=207666051]
-collision_mask = 2
+[node name="Paddle" type="Area2D" unique_id=226525546]
+collision_layer = 2
 script = ExtResource("1_q5rgx")
+bounce_power = 100.0
+spin_power = 70.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792027524]
-position = Vector2(0, -32)
+position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_q5rgx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873107721]
-position = Vector2(0, -32)
-scale = Vector2(0.021939678, 0.08389041)
+position = Vector2(0, -24)
+scale = Vector2(1, 1.5)
 texture = ExtResource("2_2sa55")
+region_enabled = true
+region_rect = Rect2(12, 0, 8, 32)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

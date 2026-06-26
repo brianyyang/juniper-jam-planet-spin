@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjm6bk1rykepx"
-path="res://.godot/imported/Terra_globe_icon.png-b75af19c66af09b95e31a14025471574.ctex"
+uid="uid://b3qaetnn13p0a"
+path="res://.godot/imported/explosion.png-3d70b655f829d2ec362997bd3be8e3ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Terra_globe_icon.png"
-dest_files=["res://.godot/imported/Terra_globe_icon.png-b75af19c66af09b95e31a14025471574.ctex"]
+source_file="res://assets/explosion.png"
+dest_files=["res://.godot/imported/explosion.png-3d70b655f829d2ec362997bd3be8e3ae.ctex"]
 
 [params]
 

@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://bvlijvfgfwshf"]
 
-[ext_resource type="Texture2D" uid="uid://cjm6bk1rykepx" path="res://assets/Terra_globe_icon.png" id="1_invnv"]
 [ext_resource type="Script" uid="uid://dq7wed7ee6qeq" path="res://scenes/planet/planet.gd" id="1_q7o7h"]
+[ext_resource type="Texture2D" uid="uid://c72sgwiefcvjk" path="res://assets/spritesheet.png" id="2_25nq4"]
 [ext_resource type="PackedScene" uid="uid://c8uxg8xw4y13r" path="res://scenes/paddle/paddle.tscn" id="3_25nq4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q7o7h"]
-radius = 50.0
+radius = 16.0
 
-[node name="Planet" type="AnimatableBody2D" unique_id=1293236800]
-collision_mask = 2
+[node name="Planet" type="AnimatableBody2D" unique_id=1293236800 node_paths=PackedStringArray("paddle")]
+collision_layer = 4
 script = ExtResource("1_q7o7h")
-rotation_speed = 5.0
-acceleration = 10.0
-damping = 3.0
+rotation_speed = 4.712
+paddle = NodePath("Paddles/Paddle")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999152958]
-scale = Vector2(0.13165808, 0.13165809)
-texture = ExtResource("1_invnv")
+texture = ExtResource("2_25nq4")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446011841]
 shape = SubResource("CircleShape2D_q7o7h")
@@ -24,4 +24,4 @@ shape = SubResource("CircleShape2D_q7o7h")
 [node name="Paddles" type="Node2D" parent="." unique_id=1185409340]
 
 [node name="Paddle" parent="Paddles" unique_id=2407610 instance=ExtResource("3_25nq4")]
-position = Vector2(0, -50)
+position = Vector2(0, -16)

@@ -7,7 +7,7 @@
 script = ExtResource("1_r01o5")
 timer = NodePath("Timer")
 asteroid_scene = ExtResource("2_kutw3")
-speed = 200.0
+speed = 100.0
 spawn_interval = 2.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1472144880]

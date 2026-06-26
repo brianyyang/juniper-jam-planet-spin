@@ -2,12 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://bvlijvfgfwshf" path="res://scenes/planet/planet.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://b5k6xegdlr2gs" path="res://scenes/asteroid/asteroid_spawner.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://c72sgwiefcvjk" path="res://assets/spritesheet.png" id="3_sugp2"]
 
 [node name="Node2D" type="Node2D" unique_id=1218603156]
 
 [node name="Planet" parent="." unique_id=473159599 instance=ExtResource("1_o5qli")]
-position = Vector2(576, 320)
+position = Vector2(320, 180)
 
 [node name="AsteroidSpawner" parent="." unique_id=185631075 instance=ExtResource("2_0wfyh")]
+speed = 75.0
+spawn_interval = 1.0
 
 [node name="Asteroids" type="Node2D" parent="." unique_id=1714342997]
+
+[node name="Background" type="Sprite2D" parent="Asteroids" unique_id=418778083]
+modulate = Color(0.07132731, 0.14310992, 0.1843993, 1)
+z_index = -1
+position = Vector2(302.75003, 187.8594)
+scale = Vector2(31.953125, 17.973635)
+texture = ExtResource("3_sugp2")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)

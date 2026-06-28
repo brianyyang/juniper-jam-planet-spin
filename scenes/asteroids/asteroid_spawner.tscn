@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b5k6xegdlr2gs"]
 
-[ext_resource type="Script" uid="uid://bltjqblx18ogs" path="res://scenes/asteroid/asteroid_spawner.gd" id="1_r01o5"]
-[ext_resource type="PackedScene" uid="uid://h4oh726onwtc" path="res://scenes/asteroid/asteroid.tscn" id="2_kutw3"]
+[ext_resource type="Script" uid="uid://bltjqblx18ogs" path="res://scenes/asteroids/asteroid_spawner.gd" id="1_r01o5"]
+[ext_resource type="PackedScene" uid="uid://h4oh726onwtc" path="res://scenes/asteroids/normal/asteroid.tscn" id="2_kutw3"]
 
 [node name="AsteroidSpawner" type="Node2D" unique_id=185631075 node_paths=PackedStringArray("timer")]
 script = ExtResource("1_r01o5")
 timer = NodePath("Timer")
 asteroid_scene = ExtResource("2_kutw3")
-speed = 100.0
+speed = 120.0
 spawn_interval = 2.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1472144880]

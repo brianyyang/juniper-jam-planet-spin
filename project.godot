@@ -15,6 +15,14 @@ run/main_scene="uid://cuiyjgrkcf0c4"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://2l5yiqiyap8j"
+
+[autoload]
+
+EventBus="*uid://l7c82f6gxrdy"
+
 [display]
 
 window/size/viewport_width=640
@@ -44,6 +52,7 @@ rotate_counter_clockwise={
 2d_physics/layer_1="asteroids"
 2d_physics/layer_2="paddle"
 2d_physics/layer_3="planet"
+2d_physics/layer_4="big_asteroid"
 
 [physics]
 

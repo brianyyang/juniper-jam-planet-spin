@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bb7mwqji2uwpt"]
+
+[ext_resource type="Texture2D" uid="uid://c72sgwiefcvjk" path="res://assets/spritesheet.png" id="1_fukc0"]
+[ext_resource type="Script" uid="uid://cc7ryn88foc2v" path="res://scenes/ui/health_manager/health_manager.gd" id="1_mjda7"]
+
+[node name="HealthManager" type="Control" unique_id=1450417280 node_paths=PackedStringArray("heart_ui", "iframes_timer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjda7")
+heart_ui = [NodePath("Healthbar/Heart1"), NodePath("Healthbar/Heart2"), NodePath("Healthbar/Heart3")]
+flash_duration = 0.1
+iframes_timer = NodePath("IFramesTimer")
+
+[node name="Healthbar" type="HBoxContainer" parent="." unique_id=649004578]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 55.0
+offset_bottom = 55.0
+scale = Vector2(2, 2)
+
+[node name="Heart1" type="Sprite2D" parent="Healthbar" unique_id=1952133866]
+position = Vector2(6, 5)
+texture = ExtResource("1_fukc0")
+region_enabled = true
+region_rect = Rect2(82, 3, 11, 10)
+
+[node name="Heart2" type="Sprite2D" parent="Healthbar" unique_id=486818112]
+position = Vector2(19, 5)
+texture = ExtResource("1_fukc0")
+region_enabled = true
+region_rect = Rect2(82, 3, 11, 10)
+
+[node name="Heart3" type="Sprite2D" parent="Healthbar" unique_id=2005971664]
+position = Vector2(32, 5)
+texture = ExtResource("1_fukc0")
+region_enabled = true
+region_rect = Rect2(82, 3, 11, 10)
+
+[node name="IFramesTimer" type="Timer" parent="." unique_id=259387784]
+one_shot = true

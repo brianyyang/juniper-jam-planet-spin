@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://yfl0ipgmcrtf"]
+
+[ext_resource type="Script" uid="uid://vu2sug6vkejq" path="res://scenes/ui/dialogue_manager/dialogue_manager.gd" id="1_gwmmj"]
+[ext_resource type="Theme" uid="uid://qrxgb0lel1lh" path="res://main_theme.tres" id="2_v32c2"]
+
+[node name="DialogueManager" type="Control" unique_id=858823865 node_paths=PackedStringArray("label")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gwmmj")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=532240334]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 266.0
+offset_right = 321.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_v32c2")
+horizontal_alignment = 1
+vertical_alignment = 1

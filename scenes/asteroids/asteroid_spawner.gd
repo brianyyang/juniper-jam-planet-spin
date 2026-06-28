@@ -5,17 +5,25 @@ extends Node2D
 @export var asteroid_scene: PackedScene
 @export var speed: float
 @export var spawn_interval: float
+@export var spawn_offset: float
 
-@onready var container := $"../Asteroids"
+@onready var container := $"../../Asteroids"
 var screen_width: float
 var screen_height: float
 
 func _ready() -> void:
-	timer.wait_time = spawn_interval
-	timer.timeout.connect(spawn)
 	var viewport := get_viewport_rect()
 	screen_width = viewport.size.x
 	screen_height = viewport.size.y
+	timer.timeout.connect(spawn)
+	timer.stop()
+	EventBus.wave_ended.connect(stop_spawner)
+
+
+func activate() -> void:
+	await get_tree().create_timer(spawn_offset).timeout
+	timer.wait_time = spawn_interval
+	timer.start()
 
 
 func spawn() -> void:
@@ -37,5 +45,8 @@ func get_random_screen_edge_position() -> Vector2:
 		2: pos = Vector2(randf_range(0, screen_width), screen_height)
 		3: pos = Vector2(0, randf_range(0, screen_height))
 	
-	# Convert from screen space to world space
 	return get_viewport().get_canvas_transform().affine_inverse() * pos
+
+
+func stop_spawner() -> void:
+	timer.stop()

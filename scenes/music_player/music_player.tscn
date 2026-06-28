@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bcit8tplobotc"]
+
+[ext_resource type="Script" uid="uid://f67fwnfoolfr" path="res://scenes/music_player/music_player.gd" id="1_38sxc"]
+[ext_resource type="AudioStream" uid="uid://crd3p1tud3uhu" path="res://assets/audio/intro.mp3" id="2_6snej"]
+[ext_resource type="AudioStream" uid="uid://dyq2pk87w4jfu" path="res://assets/audio/loop1.mp3" id="3_7oq6m"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" unique_id=1280666890]
+process_mode = 3
+script = ExtResource("1_38sxc")
+intro_song = ExtResource("2_6snej")
+loop_song = ExtResource("3_7oq6m")

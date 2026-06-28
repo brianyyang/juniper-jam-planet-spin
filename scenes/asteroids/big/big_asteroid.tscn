@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bgwljcy3wt0c5"]
+
+[ext_resource type="Script" uid="uid://dx7s6jxugwsh" path="res://scenes/asteroids/big/big_asteroid.gd" id="1_jkkh3"]
+[ext_resource type="Texture2D" uid="uid://c72sgwiefcvjk" path="res://assets/spritesheet.png" id="2_t02xq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sa55"]
+friction = 0.0
+bounce = 0.65
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1t37"]
+radius = 17.0
+
+[node name="Asteroid" type="RigidBody2D" unique_id=215088674 node_paths=PackedStringArray("explosion_sprite")]
+collision_layer = 8
+collision_mask = 6
+physics_material_override = SubResource("PhysicsMaterial_2sa55")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_jkkh3")
+rotation_speed = 1.571
+explosion_sprite = NodePath("Explosion")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309580316]
+shape = SubResource("CircleShape2D_j1t37")
+
+[node name="Asteroid" type="Sprite2D" parent="." unique_id=1137710632]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_t02xq")
+region_enabled = true
+region_rect = Rect2(112, 32, 48, 48)
+
+[node name="Explosion" type="Sprite2D" parent="." unique_id=1434200032]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_t02xq")
+region_enabled = true
+region_rect = Rect2(64, 32, 48, 48)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

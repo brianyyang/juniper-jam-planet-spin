@@ -7,11 +7,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_q7o7h"]
 radius = 16.0
 
-[node name="Planet" type="AnimatableBody2D" unique_id=1293236800 node_paths=PackedStringArray("paddle")]
+[node name="Planet" type="AnimatableBody2D" unique_id=1293236800 node_paths=PackedStringArray("paddle", "sprite", "iframes_timer")]
 collision_layer = 4
 script = ExtResource("1_q7o7h")
-rotation_speed = 4.712
-paddle = NodePath("Paddles/Paddle")
+rotation_speed = 4.189
+paddle = NodePath("Paddle")
+sprite = NodePath("Sprite2D")
+hit_color = Color(0.84313726, 0, 0, 1)
+hit_duration = 0.2
+iframes_timer = NodePath("IFramesTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1999152958]
 texture = ExtResource("2_25nq4")
@@ -21,7 +25,8 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446011841]
 shape = SubResource("CircleShape2D_q7o7h")
 
-[node name="Paddles" type="Node2D" parent="." unique_id=1185409340]
-
-[node name="Paddle" parent="Paddles" unique_id=2407610 instance=ExtResource("3_25nq4")]
+[node name="Paddle" parent="." unique_id=2407610 instance=ExtResource("3_25nq4")]
 position = Vector2(0, -16)
+
+[node name="IFramesTimer" type="Timer" parent="." unique_id=578915450]
+one_shot = true

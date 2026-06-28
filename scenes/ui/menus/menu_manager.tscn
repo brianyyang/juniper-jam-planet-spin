@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c6v12qapa2klc"]
+
+[ext_resource type="Theme" uid="uid://qrxgb0lel1lh" path="res://main_theme.tres" id="1_kc3fk"]
+[ext_resource type="PackedScene" uid="uid://c1e5kbpdtl6kb" path="res://scenes/ui/menus/game_over/game_over.tscn" id="2_3f2si"]
+[ext_resource type="Script" uid="uid://b46sy1c1h8kv3" path="res://scenes/ui/menus/menu_manager.gd" id="2_iy20p"]
+[ext_resource type="PackedScene" uid="uid://55l2yanb5m06" path="res://scenes/ui/menus/game_won/game_won.tscn" id="4_phu1i"]
+[ext_resource type="PackedScene" uid="uid://bbucam48vnl6r" path="res://scenes/ui/menus/endless_over/endless_over.tscn" id="5_8m2hj"]
+
+[node name="MenuManager" type="Control" unique_id=1496575154 node_paths=PackedStringArray("game_over", "game_won", "endless_over")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_kc3fk")
+script = ExtResource("2_iy20p")
+game_over = NodePath("GameOver")
+game_won = NodePath("GameWon")
+endless_over = NodePath("EndlessOver")
+
+[node name="Tint" type="ColorRect" parent="." unique_id=1176385910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 40.0
+offset_right = -60.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.078431375, 0, 0.19607843, 0.81960785)
+
+[node name="GameOver" parent="." unique_id=917869022 instance=ExtResource("2_3f2si")]
+layout_mode = 1
+mouse_filter = 1
+
+[node name="GameWon" parent="." unique_id=1650985888 instance=ExtResource("4_phu1i")]
+layout_mode = 1
+
+[node name="EndlessOver" parent="." unique_id=994642830 instance=ExtResource("5_8m2hj")]
+layout_mode = 1

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b5ymqpv31hnxa"]
+
+[ext_resource type="Script" uid="uid://c337wdkj4ffrs" path="res://scenes/asteroids/tricky/tricky_asteroid.gd" id="1_0xgak"]
+[ext_resource type="Texture2D" uid="uid://c72sgwiefcvjk" path="res://assets/spritesheet.png" id="2_o561l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2sa55"]
+friction = 0.0
+bounce = 0.65
+
+[node name="Asteroid" type="RigidBody2D" unique_id=215088674 node_paths=PackedStringArray("explosion_sprite")]
+collision_mask = 6
+physics_material_override = SubResource("PhysicsMaterial_2sa55")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_0xgak")
+rotation_speed = 1.571
+explosion_sprite = NodePath("Explosion")
+orbit_speed = 0.5
+spiral_speed = 8.0
+
+[node name="Asteroid" type="Sprite2D" parent="." unique_id=1137710632]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_o561l")
+region_enabled = true
+region_rect = Rect2(7, 64, 25, 32)
+
+[node name="Explosion" type="Sprite2D" parent="." unique_id=1434200032]
+visible = false
+texture = ExtResource("2_o561l")
+region_enabled = true
+region_rect = Rect2(34, 66, 28, 28)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=991216809]
+polygon = PackedVector2Array(-4, -8, -4, -7, -6, -7, -6, -6, -4, -4, -2, -3, 0, -1, 0, 2, -4, 6, -6, 7, -3, 8, 0, 8, 0, 7, 2, 7, 2, 6, 3, 6, 3, 5, 4, 5, 4, 4, 5, 4, 5, 2, 6, 2, 6, -2, 5, -2, 5, -4, 4, -4, 4, -5, 3, -5, 3, -6, 2, -6, 2, -7, 0, -7, 0, -8)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
